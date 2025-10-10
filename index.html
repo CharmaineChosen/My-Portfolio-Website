@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charmaine Makete | Linux Engineer & Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2b6cb0;
+            --primary-light: #4299e1;
+            --secondary: #38a169;
+            --accent: #dd6b20;
+            --light: #f7fafc;
+            --dark: #2d3748;
+            --text: #4a5568;
+            --border: #e2e8f0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        body {
+            background-color: white;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+        
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        .logo span {
+            color: #F8C8DC;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: black;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #F8C8DC;
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 0 4rem;
+            background: linear-gradient(to bottom, #f8fafc 0%, white 100%);
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .hero-text {
+            flex: 1;
+            padding-right: 3rem;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .tagline {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: #F8C8DC;
+            font-weight: 500;
+        }
+        
+        .hero-description {
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+            max-width: 600px;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #F8C8DC;
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: black;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(66, 153, 225, 0.2);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid #A9A9A9;
+            color: black;
+        }
+        
+        .btn-outline:hover {
+            background-color: #A9A9A9;
+            box-shadow: none;
+        }
+        
+        .hero-image {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        /* Sections */
+        section {
+            padding: 6rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            font-size: 2.2rem;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            bottom: -10px;
+            left: 25%;
+            background: linear-gradient(to right, #F8C8DC, #A9A9A9);
+            border-radius: 2px;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+        
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .about-image img {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        /* Experience Section */
+        .experience-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .experience-item {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .experience-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        
+        .experience-date {
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .experience-company {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .experience-title {
+            color: var(--text);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .experience-description {
+            margin-bottom: 1rem;
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-category {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+        }
+        
+        .skill-category h3 {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-category h3 i {
+            margin-right: 0.8rem;
+            color: var(--primary);
+        }
+        
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .skill-bar {
+            height: 8px;
+            background-color: var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+        
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+        
+        .project-info {
+            padding: 1.8rem;
+        }
+        
+        .project-info h3 {
+            color: var(--dark);
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+        
+        .project-info p {
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tech-tag {
+            background-color: rgba(66, 153, 225, 0.1);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .project-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s;
+        }
+        
+        .project-links a:hover {
+            color: var(--primary-light);
+        }
+        
+        .project-links i {
+            margin-right: 0.5rem;
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            gap: 4rem;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .contact-details {
+            margin-bottom: 2.5rem;
+        }
+        
+        .contact-details p {
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+        
+        .contact-details i {
+            margin-right: 1rem;
+            color: #F8C8DC;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background-color: white;
+            color: black;
+            border-radius: 50%;
+            transition: all 0.3s;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        
+        .social-links a:hover {
+            background-color: #A9A9A9;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(66, 153, 225, 0.2);
+        }
+        
+        .contact-form {
+            flex: 2;
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark);
+            font-size: 0.95rem;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.9rem;
+            background-color: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+        
+        .footer-logo span {
+            color: #F8C8DC;
+        }
+        
+        .footer-text {
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #F8C8DC;
+        }
+        
+        .copyright {
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-content,
+            .about-content,
+            .contact-container {
+                flex-direction: column;
+                gap: 3rem;
+            }
+            
+            .hero-text,
+            .about-text {
+                padding-right: 0;
+                text-align: center;
+            }
+            
+            .btn-group {
+                justify-content: center;
+            }
+            
+            .hero-image {
+                margin-top: 2rem;
+            }
+            
+            .about-image {
+                order: -1;
+            }
+            
+            .contact-info {
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.3rem;
+            }
+            
+            .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .experience-item {
+                padding: 1.5rem;
+            }
+            
+            .project-info {
+                padding: 1.5rem;
+            }
+            
+            .contact-form {
+                padding: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-links {
+                display: none;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Charmaine<span>Makete</span></div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Linux Engineer & Full Stack Developer</h1>
+                    <p class="tagline">Building robust systems and scalable cloud solutions</p>
+                    <p class="hero-description">
+                        I'm Charmaine Makete, a Linux Systems Engineer at Digital SA with experience in cloud infrastructure, system administration, and full-stack development. I create efficient, secure solutions that bridge operations and development.
+                    </p>
+                    <div class="btn-group">
+                        <a href="#projects" class="btn">View Projects</a>
+                        <a href="#contact" class="btn btn-outline">Contact Me</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="sharma1.jpg" alt="Charmaine Makete">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm an Information Technology professional with expertise in Linux systems, cloud computing, and application development. Currently working as a Junior Linux Systems Engineer and Frontend developer at Digital SA since May 2025, I previously completed a Cloud Computing Internship at Standard Bank Group from May 2023 to October 2024.
+                    </p>
+                    <p>
+                        My background includes both system administration and full-stack development, allowing me to understand the complete lifecycle of applications from infrastructure to implementation. I'm passionate about automation, security, and creating efficient solutions.
+                    </p>
+                    <p>
+                        When I'm not working on servers or code, you can find me learning new technologies, contributing to open-source projects, or mentoring aspiring technologists.
+                    </p>
+                    
+                    <h3 style="margin-top: 2rem; color: var(--dark);">Education</h3>
+                    <p><strong>University of South Africa</strong><br>
+                    Diploma in Information Technology (2022)</p>
+                    <p><strong>Ivory Park Secondary</strong><br>
+                    Grade 12 (2013)</p>
+                </div>
+                <div class="about-image">
+                    <img src="charmza6.jpg" alt="About Charmaine">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="experience-container">
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3 class="experience-company">Digital SA</h3>
+                        <span class="experience-date">May 2025 - Present</span>
+                    </div>
+                    <h4 class="experience-title">Junior Linux Systems Engineer and Frontend developer</h4>
+                    <p class="experience-description">
+                        Design, implement, and maintain Linux server infrastructure across the organization. Automate deployment and management tasks using Ansible. Ensure system security, performance, and high availability.
+                    </p>
+                    <ul style="margin-left: 1.5rem; color: var(--text);">
+                        <li>Implemented automated server provisioning reducing deployment time by 70%</li>
+                        <li>Designed and maintained CI/CD pipelines for infrastructure changes</li>
+                        <li>Led security hardening initiative achieving 100% compliance</li>
+                        <li>Developed frontend interfaces for internal system management tools</li>
+                        <li>Created UI/UX designs using Figma for system dashboards</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3 class="experience-company">Standard Bank Group</h3>
+                        <span class="experience-date">May 2023 - October 2024</span>
+                    </div>
+                    <h4 class="experience-title">Cloud Computing Intern</h4>
+                    <p class="experience-description">
+                        Gained hands-on experience with Unix/Linux systems, server builds, configurations, and automation in a cloud computing environment.
+                    </p>
+                    <ul style="margin-left: 1.5rem; color: var(--text);">
+                        <li>Performed Linux server builds including OS installation and configurations</li>
+                        <li>Configured local storage and file systems</li>
+                        <li>Created and managed Ansible Playbooks for automation</li>
+                        <li>Upgraded systems from RHEL 7 to RHEL 8 OS</li>
+                        <li>Configured firewall settings using firewall-cmd/firewalld</li>
+                        <li>Managed users, groups, and system security</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3 class="experience-company">CodeTribe Academy</h3>
+                        <span class="experience-date">July 2020 - March 2021</span>
+                    </div>
+                    <h4 class="experience-title">Mobile and Web Development Trainee</h4>
+                    <p class="experience-description">
+                        Developed mobile and web applications while learning modern development practices and tools.
+                    </p>
+                    <ul style="margin-left: 1.5rem; color: var(--text);">
+                        <li>Developed mobile applications for Android and iOS platforms</li>
+                        <li>Used Firebase for app data storage and management</li>
+                        <li>Created UI/UX designs using Figma</li>
+                        <li>Tracked project progress using Trello</li>
+                        <li>Collaborated in agile development teams</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3 class="experience-company">Dischem Pharmacies</h3>
+                        <span class="experience-date">December 2022 - February 2023</span>
+                    </div>
+                    <h4 class="experience-title">Cashier Learner</h4>
+                    <p class="experience-description">
+                        Completed a three-month cashier learnership, gaining experience in customer service and retail operations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><i class="fas fa-server"></i> Linux & Cloud</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Linux Administration</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>AWS Cloud</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Ansible</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Shell Scripting</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Frontend</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>HTML5/CSS3</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>JavaScript</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Angular</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Ionic</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> Backend</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>PHP</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Java</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>SQL</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>C#</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> Tools & Design</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Git/GitHub</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Figma</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Trello</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Jira</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/pro3.png" alt="Linux Server Dashboard">
+                    </div>
+                    <div class="project-info">
+                        <h3>Linux Server Dashboard</h3>
+                        <p>A comprehensive monitoring solution for Linux servers displaying real-time metrics and system health indicators.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">Bash</span>
+                            <span class="tech-tag">Prometheus</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/CharmaineChosen" target="_blank"><i class="fas fa-code"></i> Code</a>
+                            <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/pro1.jpg" alt="Mobile Application">
+                    </div>
+                    <div class="project-info">
+                        <h3>Mobile Application</h3>
+                        <p>The Dine Restaurant booking application developed with Ionic Framework and Firebase backend.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Ionic</span>
+                            <span class="tech-tag">Angular</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Figma</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/CharmaineChosen" target="_blank"><i class="fas fa-code"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/charmcho.png" alt="Patient System">
+                    </div>
+                    <div class="project-info">
+                        <h3>E-Commerce Website</h3>
+                        <p>Full-stack application for CharmChosen Christian Apparel and Accessories online store.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/CharmaineChosen" target="_blank"><i class="fas fa-code"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="https://github.com/CharmaineChosen" class="btn" target="_blank">View All Projects on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-details">
+                        <p><i class="fas fa-map-marker-alt"></i> Diepkloof, Johannesburg, South Africa</p>
+                        <p><i class="fas fa-mobile-alt"></i> 071 432 2006</p>
+                        <p><i class="fas fa-envelope"></i> charmaine.makete@gmail.com</p>
+                    </div>
+                    
+                    <h3>Connect With Me</h3>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/charmaine-makete-102029ba" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/CharmaineChosen" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://twitter.com/CharmaineMakete" target="_blank"><i class="fab fa-x"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Charmaine<span>Makete</span></div>
+                <p class="footer-text">
+                    Linux Systems Engineer | Cloud Engineer | Full Stack Developer
+                </p>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <p class="copyright">
+                    &copy; 2024 Charmaine Makete. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
